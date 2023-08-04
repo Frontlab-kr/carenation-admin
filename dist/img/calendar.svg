@@ -1,0 +1,9 @@
+<svg id="calendar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="click_area" width="24" height="24" fill="none"/>
+  <g id="icon" transform="translate(9851 9838)">
+    <path id="빼기_3" data-name="빼기 3" d="M14,15H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H14a2,2,0,0,1,2,2V13A2,2,0,0,1,14,15ZM1.5,5v7.5a1,1,0,0,0,1,1h11a1,1,0,0,0,1-1V5Z" transform="translate(-9847 -9833)" fill="#6e6a69"/>
+    <rect id="사각형_15157" data-name="사각형 15157" width="1.5" height="4" transform="translate(-9844 -9835)" fill="#6e6a69"/>
+    <rect id="사각형_15158" data-name="사각형 15158" width="1.5" height="4" transform="translate(-9835.5 -9835)" fill="#6e6a69"/>
+    <path id="합치기_58" data-name="합치기 58" d="M6.634,4.4V2.918H8V4.4Zm-3.317,0V2.918H4.683V4.4ZM0,4.4V2.918H1.366V4.4ZM6.634,1.486V0H8V1.486Zm-3.317,0V0H4.683V1.486ZM0,1.486V0H1.366V1.486Z" transform="translate(-9843 -9826.185)" fill="#6e6a69"/>
+  </g>
+</svg>

@@ -50,10 +50,11 @@
 		<script src="../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
 		<!-- dropzonejs -->
 		<script src="../../plugins/dropzone/min/dropzone.min.js"></script>
+		<!-- jquery-validation -->
+		<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+		<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
 		<!-- AdminLTE App -->
 		<script src="../../dist/js/adminlte.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
-		<script src="../../dist/js/demo.js"></script>
 		<!-- Page specific script -->
 		<script src="../../dist/js/common.js"></script>
 
@@ -94,7 +95,7 @@
 				<div class="carenation-header-info">
 					<p class="carenation-header-info__name"><strong>홍길동</strong> 케어네이션,운영자</p>
 					<p class="carenation-header-info__time">2023-06-30 09:00 Login</p>
-					<button type="button" class="btn btn-outline-primary">로그아웃</button>
+					<button type="button" class="btn btn-md btn-outline-primary btn-round">로그아웃</button>
 				</div>
 			</nav>
 
@@ -224,24 +225,24 @@
 							</div>
 							<div class="col col-4">
 								<label for="input01" class="form-label">발송기간</label>
-								<div class="d-flex align-items-center">
-									<div class="input-group date" id="reservationdate" data-target-input="nearest">
-										<input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-										<div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+								<div class="carenation-datepicker">
+									<div class="input-group datetimepicker" id="datetimepickerStart" data-target-input="nearest">
+										<input type="text" class="form-control" data-target="#datetimepickerStart" />
+										<div class="input-group-append" data-target="#datetimepickerStart" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="fa fa-calendar"></i></div>
 										</div>
 									</div>
-									~
-									<div class="input-group date" id="reservationdate" data-target-input="nearest">
-										<input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
-										<div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+									<em>~</em>
+									<div class="input-group datetimepicker" id="datetimepickerEnd" data-target-input="nearest">
+										<input type="text" class="form-control" data-target="#datetimepickerEnd" />
+										<div class="input-group-append" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="fa fa-calendar"></i></div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col col-2">
-								<label for="input01" class="form-label">발송구분</label>
+								<label for="input01" class="form-label">수신처</label>
 								<input type="text" class="form-control" id="input01" placeholder="가이드 텍스트" />
 							</div>
 							<div class="col col-2">
@@ -250,7 +251,9 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn btn-warning"><i class="fa fa-search"></i> 조회</button>
+					<div class="carenation-search__button">
+						<button type="button" class="btn btn-search"><i class="fa fa-search"></i> 조회</button>
+					</div>
 				</div>
 				<div class="carenation-table">
 					<div class="carenation-table-head">
@@ -439,11 +442,13 @@
 						</div>
 						<div class="carenation-pagination">
 							<ul class="pagination">
-								<li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link first" href="#">first</a></li>
+								<li class="page-item"><a class="page-link prev" href="#">prev</a></li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
 								<li class="page-item"><a class="page-link" href="#">2</a></li>
 								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+								<li class="page-item"><a class="page-link next" href="#">next</a></li>
+								<li class="page-item"><a class="page-link last" href="#">last</a></li>
 							</ul>
 						</div>
 					</div>

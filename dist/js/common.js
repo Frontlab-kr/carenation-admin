@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	//Date picker
-	$('#reservationdate').datetimepicker({
+	$('.datetimepicker').datetimepicker({
 		format: 'L',
 	});
 });
