@@ -1,0 +1,7 @@
+<svg id="system" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="click_area" width="24" height="24" fill="none"/>
+  <g id="icon" transform="translate(3 4)">
+    <path id="패스_64" data-name="패스 64" d="M3,3H15v7H3Z" fill="#fff" opacity="0.6"/>
+    <path id="패스_65" data-name="패스 65" d="M0,1.5A1.5,1.5,0,0,1,1.5,0h15A1.5,1.5,0,0,1,18,1.5v10A1.5,1.5,0,0,1,16.5,13H11v1.5h3.25a.75.75,0,0,1,0,1.5H3.75a.75.75,0,0,1,0-1.5H7V13H1.5A1.5,1.5,0,0,1,0,11.5Zm16.5,0H1.5v10h15Z" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>
