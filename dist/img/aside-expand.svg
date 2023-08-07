@@ -1,0 +1,8 @@
+<svg id="expand" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="icon" transform="translate(-206 -19)">
+    <rect id="사각형_46" data-name="사각형 46" width="16" height="2" transform="translate(210 24)" fill="#7e4f40"/>
+    <rect id="사각형_47" data-name="사각형 47" width="16" height="2" transform="translate(210 30)" fill="#7e4f40"/>
+    <rect id="사각형_48" data-name="사각형 48" width="16" height="2" transform="translate(210 36)" fill="#7e4f40"/>
+  </g>
+  <rect id="click_area" width="24" height="24" fill="none"/>
+</svg>

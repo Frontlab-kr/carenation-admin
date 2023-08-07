@@ -101,6 +101,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 
 	// layout
 	&-logo {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -109,9 +110,20 @@ body:not(.layout-fixed) .carenation-sidebar {
 			display: block;
 			width: 160px;
 			height: 30px;
+			margin-right: 8px;
 			background: url(../img/logo.svg) no-repeat 50% 50%;
 			background-size: cover;
 			font-size: 0;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 28px;
+			right: 0;
+			width: 1px;
+			height: 20px;
+			background-color: #dbd6d4;
 		}
 	}
 	&-header {
@@ -162,6 +174,18 @@ body:not(.layout-fixed) .carenation-sidebar {
 				background-color: #f2efef;
 				font-size: 12px;
 				color: #98918f;
+			}
+		}
+		.navbar-nav {
+			margin: 3px 0 0 -33px;
+			.nav-link {
+				width: 50px;
+				height: 50px;
+				margin: 0;
+				background: url(../img/aside-expand.svg) no-repeat 50% 50%;
+				i {
+					display: none;
+				}
 			}
 		}
 	}
@@ -281,10 +305,31 @@ body:not(.layout-fixed) .carenation-sidebar {
 							padding: 11px 0 14px 0;
 							list-style: none;
 							> li {
+								position: relative;
 								padding: 2px 10px 2px 40px;
 								a {
 									font-size: 14px;
+									line-height: 1;
 									color: rgba($color: #f8f7f7, $alpha: 0.6);
+									&:hover {
+										color: #fff;
+									}
+								}
+								&.active {
+									a {
+										font-weight: 500;
+										color: #fff;
+									}
+									&:before {
+										content: '';
+										display: block;
+										position: absolute;
+										top: 16px;
+										left: 15px;
+										width: 6px;
+										height: 2px;
+										background-color: #ff9d00;
+									}
 								}
 							}
 						}
@@ -319,7 +364,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 		background-color: #fff;
 		overflow: hidden;
 		h1 {
-			margin: 0 8px 15px;
+			margin: 0 12px 15px;
 			font-size: 21px;
 			font-weight: bold;
 			font-stretch: normal;
@@ -366,7 +411,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 				font-size: 0;
 			}
 			&__title {
-				margin-top: 20px;
+				margin-top: 21px;
 				font-size: 36px;
 				font-weight: bold;
 				font-stretch: normal;
@@ -377,20 +422,20 @@ body:not(.layout-fixed) .carenation-sidebar {
 				color: #5a3024;
 			}
 			&__text {
-				margin: 12px 0 60px 0;
+				margin: 14px 0 60px 0;
 				font-size: 18px;
 				font-weight: 500;
 				font-stretch: normal;
 				font-style: normal;
-				line-height: 1.78;
+				line-height: 1.44;
 				letter-spacing: normal;
 				text-align: center;
-				color: rgba($color: #b3a49f, $alpha: 0.6);
+				color: #b3a49f;
 			}
 			&__result {
-				margin: 60px 0 60px 0;
+				margin: 0 0 60px 0;
 				padding: 24px;
-				border-radius: 34px;
+				border-radius: 20px;
 				background-color: #f7f6f5;
 				font-size: 18px;
 				font-weight: normal;
@@ -430,6 +475,10 @@ body:not(.layout-fixed) .carenation-sidebar {
 				}
 			}
 			&__item {
+				margin-bottom: 60px;
+				&:nth-child(2) {
+					margin-bottom: 22px;
+				}
 				.error {
 					display: inline-flex;
 					align-items: center;
@@ -455,7 +504,6 @@ body:not(.layout-fixed) .carenation-sidebar {
 			}
 			&__id {
 				position: relative;
-				margin-bottom: 22px;
 				button {
 					position: absolute;
 					top: 19px;
@@ -479,7 +527,6 @@ body:not(.layout-fixed) .carenation-sidebar {
 			}
 			&__pw {
 				position: relative;
-				margin-bottom: 60px;
 				button {
 					position: absolute;
 					top: 19px;
@@ -642,11 +689,12 @@ body:not(.layout-fixed) .carenation-sidebar {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			min-height: 32px;
 			margin-bottom: 18px;
 			&__total {
 				display: flex;
 				align-items: center;
-				padding-left: 4px;
+				padding-left: 8px;
 				font-size: 14px;
 				font-weight: 500;
 				color: #6e6a69;
@@ -688,20 +736,12 @@ body:not(.layout-fixed) .carenation-sidebar {
 				margin: 24px 0 0 0;
 			}
 			.table {
-				&.table-striped {
-					tbody {
-						tr {
-							&:nth-of-type(odd) {
-								background-color: #f8f7f7;
-							}
-						}
-					}
-				}
+				border: 1px solid #dbd6d4;
 				&.table-head-fixed {
-					border: 1px solid #dbd6d4;
 					thead {
 						tr {
 							th {
+								position: sticky;
 								background-color: #a47768;
 								padding: 0.625rem 0.75rem;
 								border: 1px solid #a47768;
@@ -716,7 +756,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 								box-shadow: none;
 								border: none;
 								&::before {
-									content: "";
+									content: '';
 									display: block;
 									position: absolute;
 									top: 50%;
@@ -726,11 +766,20 @@ body:not(.layout-fixed) .carenation-sidebar {
 									background: rgba($color: #fff, $alpha: 0.2);
 									transform: translateY(-50%);
 								}
-								&:first-child {
-									border-radius: 8px 0 0 0;
+							}
+							&:first-child {
+								th {
+									&:first-child {
+										border-radius: 8px 0 0 0;
+									}
+									&:last-child {
+										border-radius: 0 8px 0 0;
+									}
 								}
-								&:last-child {
-									border-radius: 0 8px 0 0;
+							}
+							&:nth-child(2) {
+								th {
+									top: 40px;
 								}
 							}
 						}
@@ -748,6 +797,15 @@ body:not(.layout-fixed) .carenation-sidebar {
 								// &:last-child {
 								// 	border-right: 1px solid #dbd6d4;
 								// }
+							}
+						}
+					}
+				}
+				&.table-striped {
+					tbody {
+						tr {
+							&:nth-of-type(odd) {
+								background-color: #f8f7f7;
 							}
 						}
 					}
