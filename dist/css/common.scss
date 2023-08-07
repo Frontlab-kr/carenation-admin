@@ -56,6 +56,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 .carenation {
 	position: relative;
 	min-height: 100%;
+	padding: 0 0 20px 0;
 	background-color: #f8f7f7;
 	//url
 	&-url {
@@ -609,16 +610,23 @@ body:not(.layout-fixed) .carenation-sidebar {
 		padding: 16px 30px 20px 20px;
 		border-radius: 8px;
 		background-color: #f8f7f7;
-		label {
-			font-size: 12px;
-			font-weight: 500;
-			font-stretch: normal;
-			font-style: normal;
-			line-height: normal;
-			letter-spacing: normal;
-			text-align: left;
-			color: #6e6a69;
-			line-height: 1;
+		.row {
+			.col {
+				> label {
+					font-size: 12px;
+					font-weight: 500;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: normal;
+					letter-spacing: normal;
+					text-align: left;
+					color: #6e6a69;
+					line-height: 1;
+				}
+				.form-group {
+					margin: 38px 0 0 0;
+				}
+			}
 		}
 		&__button {
 			display: flex;
@@ -633,10 +641,12 @@ body:not(.layout-fixed) .carenation-sidebar {
 		&-head {
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			margin-bottom: 18px;
 			&__total {
 				display: flex;
 				align-items: center;
+				padding-left: 4px;
 				font-size: 14px;
 				font-weight: 500;
 				color: #6e6a69;
@@ -660,6 +670,12 @@ body:not(.layout-fixed) .carenation-sidebar {
 						text-align: left;
 						color: #e36a01;
 					}
+				}
+			}
+			&__button {
+				margin-right: 12px;
+				.btn {
+					margin-left: 1rem;
 				}
 			}
 		}
@@ -687,6 +703,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 						tr {
 							th {
 								background-color: #a47768;
+								padding: 0.625rem 0.75rem;
 								border: 1px solid #a47768;
 								font-size: 13px;
 								font-weight: 500;
@@ -698,6 +715,17 @@ body:not(.layout-fixed) .carenation-sidebar {
 								color: #fff;
 								box-shadow: none;
 								border: none;
+								&::before {
+									content: "";
+									display: block;
+									position: absolute;
+									top: 50%;
+									left: 0;
+									width: 1px;
+									height: 16px;
+									background: rgba($color: #fff, $alpha: 0.2);
+									transform: translateY(-50%);
+								}
 								&:first-child {
 									border-radius: 8px 0 0 0;
 								}
@@ -710,6 +738,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 					tbody {
 						tr {
 							td {
+								padding: 0.563rem 0.75rem;
 								font-size: 14px;
 								color: #6e6a69;
 								border-color: #dbd6d4;

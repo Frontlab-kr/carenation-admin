@@ -51,6 +51,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 .carenation {
   position: relative;
   min-height: 100%;
+  padding: 0 0 20px 0;
   background-color: #f8f7f7;
 }
 .carenation-url {
@@ -580,7 +581,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   border-radius: 8px;
   background-color: #f8f7f7;
 }
-.carenation-search label {
+.carenation-search .row .col > label {
   font-size: 12px;
   font-weight: 500;
   font-stretch: normal;
@@ -590,6 +591,9 @@ body:not(.layout-fixed) .carenation-sidebar {
   text-align: left;
   color: #6e6a69;
   line-height: 1;
+}
+.carenation-search .row .col .form-group {
+  margin: 38px 0 0 0;
 }
 .carenation-search__button {
   display: flex;
@@ -604,11 +608,13 @@ body:not(.layout-fixed) .carenation-sidebar {
 .carenation-table-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 18px;
 }
 .carenation-table-head__total {
   display: flex;
   align-items: center;
+  padding-left: 4px;
   font-size: 14px;
   font-weight: 500;
   color: #6e6a69;
@@ -634,6 +640,12 @@ body:not(.layout-fixed) .carenation-sidebar {
   text-align: left;
   color: #e36a01;
 }
+.carenation-table-head__button {
+  margin-right: 12px;
+}
+.carenation-table-head__button .btn {
+  margin-left: 1rem;
+}
 .carenation-table-wrap {
   height: 100%;
 }
@@ -651,6 +663,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 }
 .carenation-table-wrap .table.table-head-fixed thead tr th {
   background-color: #a47768;
+  padding: 0.625rem 0.75rem;
   border: 1px solid #a47768;
   font-size: 13px;
   font-weight: 500;
@@ -663,6 +676,17 @@ body:not(.layout-fixed) .carenation-sidebar {
   box-shadow: none;
   border: none;
 }
+.carenation-table-wrap .table.table-head-fixed thead tr th::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%);
+}
 .carenation-table-wrap .table.table-head-fixed thead tr th:first-child {
   border-radius: 8px 0 0 0;
 }
@@ -670,6 +694,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   border-radius: 0 8px 0 0;
 }
 .carenation-table-wrap .table.table-head-fixed tbody tr td {
+  padding: 0.563rem 0.75rem;
   font-size: 14px;
   color: #6e6a69;
   border-color: #dbd6d4;

@@ -86,25 +86,26 @@
 		<div class="carenation-login">
 			<div class="carenation-login-form">
 				<div class="carenation-login-form__logo">CARENATION</div>
-				<div class="carenation-login-form__title">패스워드 찾기</div>
-				<div class="carenation-login-form__text">
-					조회 후 이메일로 패스워드를<br />
-					변경할 수 있는 링크가 전송됩니다.
+				<div class="carenation-login-form__title">패스워드 변경</div>
+				<div class="carenation-login-form__text">패스워드를 변경해주세요.</div>
+				<div class="carenation-login-form__form">
+					<form action="" id="loginForm">
+						<label for="loginId" class="form-label">Password</label>
+						<div class="carenation-login-form__item carenation-login-form__pw">
+							<input type="password" name="loginPw" class="form-control form-control-lg btn-round" id="loginPw" />
+							<button type="button">비밀번호 보기</button>
+						</div>
+						<label for="loginPwNew" class="form-label">Repeat password</label>
+						<div class="carenation-login-form__item carenation-login-form__pw">
+							<input type="password" name="loginPwNew" class="form-control form-control-lg btn-round" id="loginPwNew" />
+							<button type="button">비밀번호 보기</button>
+						</div>
+						<button type="submit" class="btn btn-primary btn-lg btn-block btn-round">저장</button>
+					</form>
 				</div>
-				<div class="carenation-login-form__result">
-					홍길동님의 이메일
-					<p>
-						<strong>Username@gmail.com</strong> 로<br />
-						패스워드 변경 링크가 전송되었습니다.
-					</p>
-				</div>
-				<a href="" class="btn btn-primary btn-lg btn-block btn-round">로그인으로 이동</a>
 				<div class="carenation-login-form__link">
 					<p>
 						<a href="">로그인</a>
-					</p>
-					<p>
-						<a href="">아이디 찾기</a>
 					</p>
 				</div>
 			</div>
