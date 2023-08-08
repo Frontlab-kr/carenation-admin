@@ -4,7 +4,7 @@
 .sidebar-mini.sidebar-collapse .carenation-body,
 .sidebar-mini.sidebar-collapse .main-footer,
 .sidebar-mini.sidebar-collapse .carenation-header {
-	margin-left: 4.6rem !important;
+	margin-left: 20px !important;
 }
 body:not(.layout-fixed) .carenation-sidebar {
 	height: inherit;
@@ -12,14 +12,25 @@ body:not(.layout-fixed) .carenation-sidebar {
 	position: absolute;
 	top: 0;
 }
+.sidebar-mini.sidebar-closed .carenation-sidebar {
+	margin-left: 0;
+	width: 0;
+	overflow-x: hidden;
+}
+.sidebar-mini.sidebar-collapse .carenation-sidebar .carenation-logo:after {
+	display: none;
+}
 @media (min-width: 992px) {
 	.sidebar-mini.sidebar-collapse .carenation-sidebar,
 	.sidebar-mini.sidebar-collapse .carenation-sidebar::before {
 		margin-left: 0;
-		width: 4.6rem;
+		width: 0;
 	}
 	.sidebar-mini.sidebar-collapse .carenation-sidebar {
-		overflow-x: hidden;
+		overflow: hidden;
+	}
+	.sidebar-mini.sidebar-collapse .carenation-sidebar .carenation-logo:after {
+		display: none;
 	}
 }
 @media (min-width: 768px) {
@@ -55,6 +66,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 
 .carenation {
 	position: relative;
+	min-width: 1024px;
 	min-height: 100%;
 	padding: 0 0 20px 0;
 	background-color: #f8f7f7;
@@ -196,7 +208,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 		&-menu {
 			display: flex;
 			flex-direction: column;
-			min-height: calc(100vh - 96px);
+			height: calc(100vh - 96px);
 			padding: 0 12px;
 			border-radius: 12px;
 			background-color: #7e4f40;
@@ -250,6 +262,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 							padding: 8px 6px 8px;
 							font-size: 14px;
 							color: #fff;
+							white-space: nowrap;
 							i {
 								display: block;
 								width: 24px;
