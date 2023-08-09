@@ -2384,7 +2384,7 @@ textarea.form-control {
 .was-validated :invalid ~ .invalid-tooltip,
 .is-invalid ~ .invalid-feedback,
 .is-invalid ~ .invalid-tooltip {
-  display: block;
+  display: inline-flex;
 }
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
@@ -3898,7 +3898,7 @@ input[type="button"].btn-block {
   position: relative;
   margin-bottom: 0;
   vertical-align: top;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -6201,10 +6201,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 24px 36px 13px;
+  padding: 24px 36px 15px;
 }
 .modal-header h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: #111;
 }
@@ -6212,9 +6212,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 .modal-header .close, .modal-header .mailbox-attachment-close {
   width: 50px;
   height: 50px;
-  margin: -11px -24px 0 0;
+  margin: -10px -25px 0 0;
   background:url(../img/modal-close.svg) no-repeat 50% 50%;
   font-size: 0;
+  opacity: 1;
 }
 
 .modal-title {
@@ -6271,7 +6272,10 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .modal-footer > p > * {
-  margin: 0 10px;
+  margin: 0 5px;
+}
+.modal-footer .btn {
+  font-weight: 500;
 }
 
 .modal-scrollbar-measure {

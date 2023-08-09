@@ -14,7 +14,7 @@ body:not(.layout-fixed) .carenation-sidebar {
 .sidebar-mini.sidebar-closed .carenation-sidebar {
   margin-left: 0;
   width: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .sidebar-mini.sidebar-collapse .carenation-sidebar .carenation-logo:after {
@@ -59,6 +59,27 @@ body:not(.layout-fixed) .carenation-sidebar {
 }
 *::-webkit-scrollbar-thumb:hover {
   background-color: #bbb;
+}
+
+.error {
+  margin: 11px 0 0 5px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  text-align: left;
+  color: #f53332;
+}
+.error::before {
+  content: "";
+  display: block;
+  min-width: 14px;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  background: url(../img/error-sm.svg) no-repeat 50% 50%;
 }
 
 .carenation {
@@ -257,6 +278,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   align-items: center;
   padding: 8px 6px 8px;
   font-size: 14px;
+  font-weight: 500;
   color: #fff;
   white-space: nowrap;
 }
@@ -365,8 +387,8 @@ body:not(.layout-fixed) .carenation-sidebar {
   overflow: hidden;
 }
 .carenation-body h1 {
-  padding: 0 12px 15px;
-  font-size: 21px;
+  padding: 0 8px 6px;
+  font-size: 24px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -480,8 +502,6 @@ body:not(.layout-fixed) .carenation-sidebar {
   margin-bottom: 22px;
 }
 .carenation-login-form__item .error {
-  display: inline-flex;
-  align-items: center;
   margin: 8px 0 0 30px;
   font-size: 14px;
   font-weight: normal;
@@ -577,6 +597,37 @@ body:not(.layout-fixed) .carenation-sidebar {
   letter-spacing: normal;
   text-align: left;
   color: #424242;
+}
+.carenation-toggle {
+  display: flex;
+}
+.carenation-toggle label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 0 0 0 76px;
+  cursor: pointer;
+}
+.carenation-toggle label:first-child {
+  margin-left: 0;
+}
+.carenation-toggle label span {
+  font-size: 14px;
+  color: #111;
+}
+.carenation-toggle label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+.carenation-toggle label input:checked ~ span {
+  font-weight: 500;
+  color: #e36a01;
+  text-decoration: underline;
 }
 .carenation .btn-search {
   display: flex;
