@@ -2055,6 +2055,9 @@ select.form-control:focus {
   border: 1px solid #6c3d31;
   background: #fff;
 }
+.form-control:focus ~ .input-group-append .input-group-text{
+  border-color: #6c3d31;
+}
 
 .form-control::-webkit-input-placeholder {
   color: #98918F;
@@ -2083,8 +2086,8 @@ select.form-control:focus {
 
 .form-control:disabled, .form-control[readonly] {
   background-color: #f8f7f7;
-  color:#dbd6d4;
   opacity: 1;
+  color: #98918f;
 }
 
 input[type="date"].form-control,
@@ -3770,6 +3773,7 @@ input[type="button"].btn-block {
   background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .input-group-text input[type="radio"],
@@ -6288,7 +6292,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 720px;
+    max-width: 724px;
     margin: 1.75rem auto;
   }
   .modal-dialog-scrollable {
@@ -14855,7 +14859,6 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .sidebar-mini .main-sidebar .nav-link,
 .sidebar-mini-md .main-sidebar .nav-link,
 .sidebar-mini-xs .main-sidebar .nav-link {
-  width: calc(250px - 0.5rem * 2);
   transition: width ease-in-out 0.3s;
 }
 
@@ -14893,7 +14896,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .sidebar-collapse.sidebar-mini .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .nav-link, .sidebar-collapse.sidebar-mini .main-sidebar:hover:not(.sidebar-no-expand) .nav-link, .sidebar-collapse.sidebar-mini-md .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .nav-link, .sidebar-collapse.sidebar-mini-md .main-sidebar:hover:not(.sidebar-no-expand) .nav-link, .sidebar-collapse.sidebar-mini-xs .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .nav-link, .sidebar-collapse.sidebar-mini-xs .main-sidebar:hover:not(.sidebar-no-expand) .nav-link {
-  width: calc(250px - 0.5rem * 2);
+  /* width: calc(250px - 0.5rem * 2); */
 }
 
 .sidebar-collapse.sidebar-mini .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .form-control-sidebar, .sidebar-collapse.sidebar-mini .main-sidebar:hover:not(.sidebar-no-expand) .form-control-sidebar, .sidebar-collapse.sidebar-mini-md .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .form-control-sidebar, .sidebar-collapse.sidebar-mini-md .main-sidebar:hover:not(.sidebar-no-expand) .form-control-sidebar, .sidebar-collapse.sidebar-mini-xs .main-sidebar.sidebar-focused:not(.sidebar-no-expand) .form-control-sidebar, .sidebar-collapse.sidebar-mini-xs .main-sidebar:hover:not(.sidebar-no-expand) .form-control-sidebar {
@@ -21478,8 +21481,8 @@ body.text-sm .control-sidebar {
   line-height: calc(1.8125rem + 2px);
 }
 
-label:not(.form-check-label):not(.custom-file-label) {
-  
+input:checked ~ label:not(.form-check-label):not(.custom-file-label) {
+  color:#111  
 }
 
 .warning-feedback {

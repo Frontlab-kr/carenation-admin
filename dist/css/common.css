@@ -1,45 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-.sidebar-mini.sidebar-collapse .carenation-body,
-.sidebar-mini.sidebar-collapse .main-footer,
-.sidebar-mini.sidebar-collapse .carenation-header {
-  margin-left: 20px !important;
-}
-
-body:not(.layout-fixed) .carenation-sidebar {
-  height: inherit;
-  position: absolute;
-  top: 0;
-}
-
-.sidebar-mini.sidebar-closed .carenation-sidebar {
-  margin-left: 0;
-  width: 0;
-  overflow: hidden;
-}
-
-.sidebar-mini.sidebar-collapse .carenation-sidebar .carenation-logo:after {
-  display: none;
-}
-
 @media (min-width: 992px) {
   .sidebar-mini.sidebar-collapse .carenation-sidebar,
   .sidebar-mini.sidebar-collapse .carenation-sidebar::before {
     margin-left: 0;
+    width: 100px;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-sidebar-menu__title {
     width: 0;
   }
-  .sidebar-mini.sidebar-collapse .carenation-sidebar {
-    overflow: hidden;
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-sidebar__foot {
+    width: 0;
   }
-  .sidebar-mini.sidebar-collapse .carenation-sidebar .carenation-logo:after {
-    display: none;
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .nav-treeview {
+    display: none !important;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-sidebar-menu nav > ul > li > a.nav-link p {
+    width: 0;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-sidebar-menu nav > ul > li i.i-arrow {
+    opacity: 0;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-logo p {
+    margin-right: 0;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-logo p:before {
+    margin: 0 auto;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-sidebar:not(:hover) .carenation-logo p strong {
+    width: 0;
   }
 }
 @media (min-width: 768px) {
   body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .carenation-body,
-  body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
-  body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+  body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .carenation-header {
     transition: margin-left 0.3s ease-in-out;
     margin-left: 270px;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar-mini.sidebar-collapse .carenation-body {
+    margin-left: 120px !important;
+  }
+  .sidebar-mini.sidebar-collapse .carenation-header {
+    margin-left: 140px !important;
   }
 }
 *::-webkit-scrollbar {
@@ -130,25 +133,32 @@ body:not(.layout-fixed) .carenation-sidebar {
   align-items: center;
   justify-content: center;
   height: 76px;
+  background: #f8f7f7;
+  margin-right: 1px;
 }
-.carenation-logo strong {
-  display: block;
-  width: 160px;
-  height: 30px;
+.carenation-logo p {
+  display: flex;
+  align-items: center;
   margin-right: 8px;
-  background: url(../img/logo.svg) no-repeat 50% 50%;
+}
+.carenation-logo p strong {
+  display: block;
+  width: 111px;
+  height: 23px;
+  background: url(../img/logo-text.png) no-repeat 50% 50%;
   background-size: cover;
   font-size: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
-.carenation-logo:after {
+.carenation-logo p:before {
   content: "";
   display: block;
-  position: absolute;
-  top: 28px;
-  right: 0;
-  width: 1px;
-  height: 20px;
-  background-color: #dbd6d4;
+  min-width: 38px;
+  width: 38px;
+  height: 30px;
+  margin-right: 12px;
+  background: url(../img/logo.png) no-repeat 50% 50%;
 }
 .carenation-header {
   position: relative;
@@ -158,6 +168,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   height: 76px;
   margin-left: 270px;
   padding: 10px 20px;
+  margin-right: 1px;
 }
 .carenation-header-info {
   display: flex;
@@ -202,7 +213,18 @@ body:not(.layout-fixed) .carenation-sidebar {
   color: #98918f;
 }
 .carenation-header .navbar-nav {
+  position: relative;
   margin: 3px 0 0 -33px;
+}
+.carenation-header .navbar-nav:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: -8px;
+  width: 1px;
+  height: 20px;
+  background-color: #dbd6d4;
 }
 .carenation-header .navbar-nav .nav-link {
   width: 50px;
@@ -227,9 +249,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   background-color: #7e4f40;
 }
 .carenation-sidebar-menu__title {
-  margin-top: 14px;
-  margin-bottom: 9px;
-  padding: 0 12px;
+  margin: 14px 12px 9px;
   opacity: 0.6;
   font-size: 12px;
   font-weight: 500;
@@ -239,6 +259,9 @@ body:not(.layout-fixed) .carenation-sidebar {
   letter-spacing: 0.12px;
   text-align: left;
   color: #f8f7f7;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 .carenation-sidebar-menu nav {
   height: calc(100vh - 250px);
@@ -276,17 +299,22 @@ body:not(.layout-fixed) .carenation-sidebar {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 8px 6px 8px;
+  padding: 2px 0px;
+}
+.carenation-sidebar-menu nav > ul > li > a.nav-link p {
   font-size: 14px;
   font-weight: 500;
   color: #fff;
   white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 .carenation-sidebar-menu nav > ul > li > a.nav-link i {
   display: block;
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  margin-right: 4px;
 }
 .carenation-sidebar-menu nav > ul > li > a.nav-link i.i-standard {
   background: url(../img/sidebar/standard.svg) no-repeat 50% 50%;
@@ -342,6 +370,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   font-size: 14px;
   line-height: 1;
   color: rgba(248, 247, 247, 0.6);
+  white-space: nowrap;
 }
 .carenation-sidebar-menu nav > ul > li > ul > li a:hover {
   color: #fff;
@@ -374,6 +403,9 @@ body:not(.layout-fixed) .carenation-sidebar {
   text-align: left;
   color: #fff;
   color: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
 }
 .carenation-body {
   display: flex;
@@ -413,28 +445,27 @@ body:not(.layout-fixed) .carenation-sidebar {
   min-width: 789px;
   width: 789px;
   height: 697px;
-  margin-right: 52px;
   background: url(../img/login.svg) no-repeat 50% 50%;
 }
 .carenation-login-form {
-  min-width: 600px;
-  width: 600px;
-  margin: 0 0 0 176px;
-  padding: 78px 50px 81px;
+  min-width: 540px;
+  width: 540px;
+  margin: 0 145px 18px;
+  padding: 58px 50px 60px;
   border-radius: 28px;
   box-shadow: 0 3px 8px 0 rgba(56, 44, 31, 0.2);
   background-color: #fff;
 }
 .carenation-login-form__logo {
-  width: 200px;
-  height: 27px;
+  width: 151px;
+  height: 21px;
   margin: 0 auto;
-  background: url(../img/logo-eng.svg) no-repeat 50% 50%;
+  background: url(../img/logo-eng.png) no-repeat 50% 50%;
   font-size: 0;
 }
 .carenation-login-form__title {
-  margin-top: 21px;
-  font-size: 36px;
+  margin-top: 20px;
+  font-size: 30px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -444,18 +475,18 @@ body:not(.layout-fixed) .carenation-sidebar {
   color: #5a3024;
 }
 .carenation-login-form__text {
-  margin: 14px 0 60px 0;
-  font-size: 18px;
+  margin: 12px 0 49px 0;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.44;
+  line-height: 1.63;
   letter-spacing: normal;
   text-align: center;
   color: #b3a49f;
 }
 .carenation-login-form__result {
-  margin: 0 0 60px 0;
+  margin: 0 0 48px 0;
   padding: 24px;
   border-radius: 20px;
   background-color: #f7f6f5;
@@ -463,7 +494,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.56;
+  line-height: 1.44;
   letter-spacing: normal;
   text-align: center;
   color: #111;
@@ -475,7 +506,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   font-weight: 500;
 }
 .carenation-login-form__form label {
-  margin: 0 30px 7px 30px;
+  margin: 0 20px 9px 20px;
   font-size: 18px;
   font-weight: normal !important;
   font-stretch: normal;
@@ -487,8 +518,8 @@ body:not(.layout-fixed) .carenation-sidebar {
 }
 .carenation-login-form__form input[type=text],
 .carenation-login-form__form input[type=password] {
-  background-color: #f7f6f5;
-  border-color: #f7f6f5;
+  background-color: #F2EFEF;
+  border-color: #F2EFEF;
 }
 .carenation-login-form__form input[type=text]:focus,
 .carenation-login-form__form input[type=password]:focus {
@@ -496,10 +527,10 @@ body:not(.layout-fixed) .carenation-sidebar {
   border-color: #6c3d31;
 }
 .carenation-login-form__item {
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 .carenation-login-form__item:nth-child(2) {
-  margin-bottom: 22px;
+  margin-bottom: 27px;
 }
 .carenation-login-form__item .error {
   margin: 8px 0 0 30px;
@@ -570,7 +601,7 @@ body:not(.layout-fixed) .carenation-sidebar {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 22px;
 }
 .carenation-login-form__link p {
   display: flex;
