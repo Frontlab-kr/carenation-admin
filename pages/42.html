@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>케어네이션 - 간병의 모든 것, 간병인 구하기, 간병인 매칭 플랫폼, 간병 빅데이터, 간병동향리포트, 데이터랩</title>
+		<meta
+			name="description"
+			content="간병인구하기, 간병인 매칭 플랫폼, 간병인배상책임보험, 간병 빅데이터, 간병비, 간병정보까지! 간병의 모든 것, 간병동향리포트, 데이터랩, 케어네이션과 함께하세요!"
+		/>
+		<meta name="twitter:site" content="@케어네이션" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="케어네이션 - 간병의 모든 것, 간병인 구하기, 간병인 매칭 플랫폼, 간병 빅데이터, 간병동향리포트, 데이터랩" />
+		<meta
+			name="twitter:description"
+			content="간병인구하기, 간병인 매칭 플랫폼, 간병인배상책임보험, 간병 빅데이터, 간병비, 간병정보까지! 간병의 모든 것, 간병동향리포트, 데이터랩, 케어네이션과 함께하세요!"
+		/>
+		<meta property="og:site_name" content="@케어네이션" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="케어네이션 - 대한민국 1등 간병 서비스, 간병인, 병원동행, 방문요양, 장기요양, 요양보호사, 간병동향리포트, 모든 헬스케어를 연결하다."
+		/>
+		<meta property="og:url" content="https://www.carenation.kr" />
+		<meta
+			property="og:description"
+			content="원하는 간병인 구하기, 간병인배상책임보험 의무가입, 병원동행, 방문요양, 재가센터 찾기, 의료용품 스토어 등 케어네이션과 함꼐하세요."
+		/>
+
+		<!-- jQuery -->
+		<script src="../../plugins/jquery/jquery.min.js"></script>
+		<!-- Bootstrap 4 -->
+		<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Select2 -->
+		<script src="../../plugins/select2/js/select2.full.min.js"></script>
+		<!-- Bootstrap4 Duallistbox -->
+		<script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+		<!-- InputMask -->
+		<script src="../../plugins/moment/moment.min.js"></script>
+		<script src="../../plugins/inputmask/jquery.inputmask.min.js"></script>
+		<!-- date-range-picker -->
+		<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- bootstrap color picker -->
+		<script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+		<!-- Tempusdominus Bootstrap 4 -->
+		<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+		<!-- Bootstrap Switch -->
+		<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+		<!-- BS-Stepper -->
+		<script src="../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
+		<!-- dropzonejs -->
+		<script src="../../plugins/dropzone/min/dropzone.min.js"></script>
+		<!-- jquery-validation -->
+		<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+		<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="../../dist/js/adminlte.js"></script>
+		<!-- swiper -->
+		<script src="../../plugins/swiper/swiper-bundle.min.js"></script>
+		<!-- summernote -->
+		<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+		<!-- Page specific script -->
+		<script src="../../dist/js/common.js"></script>
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css" />
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css" />
+		<!-- iCheck for checkboxes and radio inputs -->
+		<link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+		<!-- Bootstrap Color Picker -->
+		<link rel="stylesheet" href="../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" />
+		<!-- Tempusdominus Bootstrap 4 -->
+		<link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" />
+		<!-- Select2 -->
+		<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css" />
+		<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" />
+		<!-- Bootstrap4 Duallistbox -->
+		<link rel="stylesheet" href="../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css" />
+		<!-- BS Stepper -->
+		<link rel="stylesheet" href="../../plugins/bs-stepper/css/bs-stepper.min.css" />
+		<!-- dropzonejs -->
+		<link rel="stylesheet" href="../../plugins/dropzone/min/dropzone.min.css" />
+		<!-- Theme style -->
+		<link rel="stylesheet" href="../../dist/css/adminlte.css" />
+		<!-- summernote -->
+		<link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.min.css" />
+		<!-- swiper -->
+		<link rel="stylesheet" href="../../plugins/swiper/swiper-bundle.min.css" />
+
+		<link rel="stylesheet" href="../dist/css/common.css" />
+	</head>
+	<body class="hold-transition sidebar-mini">
+		<div class="carenation">
+			<nav class="carenation-header">
+				<!-- Left navbar links -->
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+					</li>
+				</ul>
+
+				<div class="carenation-header-info">
+					<p class="carenation-header-info__name"><strong>홍길동</strong> 케어네이션, 운영자</p>
+					<p class="carenation-header-info__time">2023-06-30 09:00 Login</p>
+					<button type="button" class="btn btn-md btn-outline-primary btn-round">로그아웃</button>
+				</div>
+			</nav>
+
+			<aside class="main-sidebar carenation-sidebar">
+				<a href="/" class="carenation-logo">
+					<p><strong>케어네이션</strong></p>
+				</a>
+				<div class="carenation-sidebar-menu">
+					<div class="carenation-sidebar-menu__body">
+						<div class="carenation-sidebar-menu__title">MAIN NAVIGATION</div>
+						<nav>
+							<ul data-widget="treeview" role="menu" data-accordion="false">
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="i-standard"></i>
+										<p>기준정보</p>
+										<i class="i-arrow"></i>
+									</a>
+									<ul class="nav-treeview">
+										<li class="active">
+											<a href=""> 공통코드 </a>
+										</li>
+										<li>
+											<a href=""> 검사항목코드 </a>
+										</li>
+										<li>
+											<a href=""> 검사그룹코드 </a>
+										</li>
+										<li>
+											<a href=""> 상품분류코드 </a>
+										</li>
+										<li>
+											<a href=""> 질환코드 </a>
+										</li>
+										<li>
+											<a href=""> 사용자그룹코드 </a>
+										</li>
+										<li>
+											<a href=""> 프로그램정보 </a>
+										</li>
+										<li>
+											<a href=""> 사용자그룹 권한관리 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="i-system"></i>
+										<p>시스템관리</p>
+										<i class="i-arrow"></i>
+									</a>
+									<ul class="nav-treeview">
+										<li>
+											<a href=""> 공지사항 </a>
+										</li>
+										<li>
+											<a href=""> FAQ </a>
+										</li>
+										<li>
+											<a href=""> 인증코드관리 </a>
+										</li>
+										<li>
+											<a href=""> 약관관리 </a>
+										</li>
+										<li>
+											<a href=""> 컨텐츠관리 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="i-user"></i>
+										<p>관리자관리</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="i-office"></i>
+										<p>기업관리</p>
+										<i class="i-arrow"></i>
+									</a>
+									<ul class="nav nav-treeview">
+										<li>
+											<a href=""> 기업정보 </a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="i-hospital"></i>
+										<p>병원관리</p>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="carenation-sidebar__foot">
+						Copyright @ Carenation. <br />
+						All rights reserved.
+					</div>
+				</div>
+			</aside>
+
+			<div class="carenation-body">
+				<div class="carenation-body__head">
+					<h1>컨텐츠관리</h1>
+					<div class="carenation-search">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col col-2">
+									<label for="input01" class="form-label">컨텐츠분류 </label>
+									<select class="form-control">
+										<option>option 1</option>
+										<option>option 2</option>
+										<option>option 3</option>
+										<option>option 4</option>
+										<option>option 5</option>
+									</select>
+								</div>
+								<div class="col col-2">
+									<label for="input01" class="form-label">키워드 </label>
+									<input type="text" name="form01Id" class="form-control" id="input01" placeholder="가이드 텍스트" />
+								</div>
+							</div>
+						</div>
+						<div class="carenation-search__button">
+							<button type="button" class="btn btn-search"><i class="fa fa-search"></i> 조회</button>
+						</div>
+					</div>
+				</div>
+				<div class="carenation-table">
+					<div class="carenation-table-head">
+						<div class="carenation-table-head__total">
+							컨텐츠수 <span><strong>23</strong>개</span>
+						</div>
+						<div class="carenation-table-head__button">
+							<button type="button" class="btn btn-sm btn-outline-primary">등록</button>
+						</div>
+					</div>
+					<div class="carenation-table-wrap">
+						<div class="table-responsive">
+							<table class="table table-head-fixed text-nowrap table-striped">
+								<thead>
+									<tr>
+										<th class="text-center">번호</th>
+										<th class="text-center">컨텐츠분류</th>
+										<th class="text-center">제목</th>
+										<th class="text-center">참고</th>
+										<th class="text-center">보임</th>
+										<th class="text-center">작업일</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+									<tr>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+										<td class="text-center">&data</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="carenation-pagination">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link first" href="#">first</a></li>
+								<li class="page-item"><a class="page-link prev" href="#">prev</a></li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link next" href="#">next</a></li>
+								<li class="page-item"><a class="page-link last" href="#">last</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="position: fixed; bottom: 0; right: 0; padding: 20px; background: rgba(0, 0, 0, 0.5); z-index: 100">
+			<p class="mb-2">
+				<button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal01">케이네이션_web_(컨텐츠관리_팝업)</button>
+			</p>
+		</div>
+
+		<div class="modal fade" id="modal01">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<form action="" id="form01">
+						<div class="modal-header">
+							<h4 class="modal-title">컨텐츠관리</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col col-6">
+										<label for="input01" class="form-label">컨텐츠분류 </label>
+										<div class="d-flex align-items-center">
+											<select class="form-control">
+												<option>option 1</option>
+												<option>option 2</option>
+												<option>option 3</option>
+												<option>option 4</option>
+												<option>option 5</option>
+											</select>
+											<div class="custom-control custom-checkbox ml-3">
+												<input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1" />
+												<label for="customCheckbox1" class="custom-control-label">보임</label>
+											</div>
+										</div>
+									</div>
+									<div class="col col-6">
+										<label for="input01" class="form-label">참고 </label>
+										<select class="form-control">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+											<option>option 4</option>
+											<option>option 5</option>
+										</select>
+									</div>
+									<div class="col col-12">
+										<label for="input01" class="form-label">제목 </label>
+										<input type="text" name="form01Id" class="form-control" id="input01" placeholder="가이드 텍스트" />
+									</div>
+									<div class="col col-12">
+										<label for="input01" class="form-label">내용 </label>
+										<textarea id="summernote">
+											Place <em>some</em> <u>text</u> <strong>here</strong>
+										</textarea
+										>
+									</div>
+									<div class="col col-6">
+										<label for="input01" class="form-label">등록자</label>
+										<input type="text" class="form-control" id="input01" placeholder="가이드 텍스트" disabled />
+									</div>
+									<div class="col col-6">
+										<label for="input01" class="form-label">등록일</label>
+										<input type="text" class="form-control" id="input01" placeholder="가이드 텍스트" disabled />
+									</div>
+									<div class="col col-6">
+										<label for="input01" class="form-label">수정자</label>
+										<input type="text" class="form-control" id="input01" placeholder="가이드 텍스트" disabled />
+									</div>
+									<div class="col col-6">
+										<label for="input01" class="form-label">수정일</label>
+										<input type="text" class="form-control" id="input01" placeholder="가이드 텍스트" disabled />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<p>
+								<button type="button" class="btn btn-outline-primary" data-dismiss="modal">취소</button>
+								<button type="submit" class="btn btn-primary">저장</button>
+							</p>
+						</div>
+					</form>
+					<script>
+						$(function () {
+							$.validator.setDefaults({
+								submitHandler: function () {
+									alert('Form successful submitted!');
+								},
+							});
+							$('#form01').validate({
+								rules: {
+									form01Id: {
+										required: true,
+									},
+								},
+								messages: {
+									form01Id: {
+										required: '6자 이상 입력해주세요',
+									},
+								},
+								errorElement: 'span',
+								errorPlacement: function (error, element) {
+									error.addClass('invalid-feedback');
+									element.closest('.col').append(error);
+								},
+								highlight: function (element, errorClass, validClass) {
+									$(element).addClass('is-invalid');
+								},
+								unhighlight: function (element, errorClass, validClass) {
+									$(element).removeClass('is-invalid');
+								},
+							});
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
